@@ -8,6 +8,23 @@
 </head>
 <body>
     <h1>Detection d'anomalie</h1>
-    {{data}}
+    <div id="container">
+
+    </div>
+    <script>
+        var container = document.getElementById("container")
+        setInterval(() => {
+            fetch("http://127.0.01:8000/anomalie")
+            .then(response => response.json())
+            .then(data => {
+                if (data.data.length !== 0) {
+                    info = data.data[0].data[0]
+                    let p = document.createElement('p');
+                    p.innerHTML = `La températeur ${info.tmp_air}°C lue à  ${info.Datetime} comporte une anomalie`
+                    container.appendChild(p);
+                }
+            })
+        }, 500)
+    </script>
 </body>
 </html>
