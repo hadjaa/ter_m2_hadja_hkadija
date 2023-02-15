@@ -20,7 +20,7 @@
                 if (data.data.length !== 0) {
                     info = data.data[0].data[0]
                     let p = document.createElement('p');
-                    p.innerHTML = `La températeur ${info.tmp_air}°C lue à  ${info.Datetime} comporte une anomalie`
+                    p.innerHTML = `La températeur ${info.tmp_air}°C lue en  ${info.Datetime} comporte une anomalie`
                     container.appendChild(p);
                 }
             })
