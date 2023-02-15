@@ -8,7 +8,7 @@ import numpy as np
 from kafka import KafkaConsumer, KafkaProducer
 from settings import ANOMALIES_TOPIC, NUM_PARTITIONS, PRODUCER_TOPIC, KAFKA_BROKER_URL, DATA_PROCESSING_GROUP
 
-model_path = os.path.abspath('../model/isolation_forest.joblib')
+model_path = os.path.abspath('../model/isolation_forest2.joblib')
 clf = load(model_path)
 
 
